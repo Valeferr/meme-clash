@@ -1,0 +1,118 @@
+.body {
+  min-height: 100vh;
+  background: var(--cloud);
+  font-family: sans-serif;
+  color: var(--ink);
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 6rem;
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.fun-text-style {
+  display: inline-block;
+  transform: rotate(-2deg);
+  background-color: var(--color-zap);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.button-text-style {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-weight: 600;
+  background-color: var(--color-punch);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.button-text-style:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-box {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-card {
+  margin: 2rem auto 0;
+  max-width: 26rem;
+  padding: 2rem;
+  text-align: left;
+  background-color: white;
+}
+
+.field-group {
+  margin-top: 1.25rem;
+}
+
+.field-group:first-child {
+  margin-top: 0;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.input-style {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: white;
+  color: var(--ink);
+}
+
+.input-style:focus {
+  outline: none;
+  border-color: var(--color-punch);
+}
+
+.input-error {
+  border-color: var(--color-punch);
+}
+
+.field-error {
+  margin-top: 0.375rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-punch);
+}
+
+.form-banner-error {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background-color: white;
+}
+
+@media (min-width: 640px) {
+  .box {
+    padding-top: 7rem;
+  }
+}

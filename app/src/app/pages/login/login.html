@@ -1,0 +1,89 @@
+<main>
+  <section class="box">
+    <div
+      class="pointer-events-none absolute inset-0 -z-10 opacity-40"
+      style="background-image: radial-gradient(#191325 1.5px, transparent 1.5px); background-size: 18px 18px; mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);"
+    ></div>
+
+    <span class="sticker fun-text-style">
+      Bentornato
+    </span>
+
+    <h1 class="mt-6 font-display text-5xl uppercase tracking-wide sm:text-7xl">
+      Accedi a <span class="text-punch">Meme Engine</span>
+    </h1>
+
+    <p class="mx-auto mt-4 max-w-xl text-base text-ink/70 sm:text-lg">
+      Inserisci le tue credenziali per unirti alla sfida.
+    </p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-card sticker">
+      <div class="field-group">
+        <label for="email" class="field-label">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="input-style"
+          [class.input-error]="isFieldInvalid('email')"
+          placeholder="tuamail@esempio.com"
+          autocomplete="email"
+        />
+        @if (isFieldInvalid('email')) {
+          <p class="field-error">
+            @if (email?.errors?.['required']) {
+              L'email è obbligatoria.
+            } @else if (email?.errors?.['email']) {
+              Inserisci un'email valida.
+            }
+          </p>
+        }
+      </div>
+
+      <div class="field-group">
+        <label for="password" class="field-label">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="input-style"
+          [class.input-error]="isFieldInvalid('password')"
+          placeholder="••••••••"
+          autocomplete="current-password"
+        />
+        @if (isFieldInvalid('password')) {
+          <p class="field-error">
+            @if (password?.errors?.['required']) {
+              La password è obbligatoria.
+            } @else if (password?.errors?.['minlength']) {
+              Deve avere almeno 6 caratteri.
+            }
+          </p>
+        }
+      </div>
+
+      @if (errorMessage()) {
+        <div class="sticker form-banner-error">
+          <p class="font-semibold text-punch">{{ errorMessage() }}</p>
+        </div>
+      }
+
+      <div class="button-box">
+        <button
+          type="submit"
+          class="sticker button-text-style"
+          [disabled]="isSubmitting()"
+        >
+          {{ isSubmitting() ? 'Accesso in corso...' : 'Accedi' }}
+        </button>
+      </div>
+    </form>
+
+    <p class="mt-6 text-sm text-ink/70">
+      Non hai un account?
+      <a routerLink="/sign-up" class="font-semibold text-punch underline">
+        Registrati
+      </a>
+    </p>
+  </section>
+</main>

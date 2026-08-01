@@ -1,3 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Anton", sans-serif;
+    --font-sans: "Plus Jakarta Sans", sans-serif;
+
+    --color-ink: #191325;
+    --color-cloud: #faf8ff;
+    --color-zap: #ffd23f;
+    --color-punch: #ff3d81;
+    --color-grape: #6c3ef4;
+  }
+
+  body {
+    background-color: var(--color-cloud);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .sticker {
+    border-radius: 1rem;
+    border: 2px solid var(--color-ink);
+    background-color: white;
+    box-shadow: 4px 4px 0 0 #191325;
+    transition: transform 0.2s;
+  }
+  .sticker:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #191325;
+  }
+}

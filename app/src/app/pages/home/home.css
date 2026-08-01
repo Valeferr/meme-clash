@@ -1,0 +1,68 @@
+.body {
+  min-height: 100vh;
+  background: var(--cloud);
+  font-family: sans-serif;
+  color: var(--ink);
+}
+
+.box-background {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  opacity: 0.4;
+
+  background-image: radial-gradient(#191325 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 6rem;
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.fun-text-style {
+  display: inline-block;
+  transform: rotate(-2deg);
+  background-color: var(--color-zap);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.button-text-style {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-weight: 600;
+  background-color: var(--color-punch);
+  color: white;
+}
+
+.button-box {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .box {
+    padding-top: 7rem;
+  }
+}
